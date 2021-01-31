@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="favicon.png" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=2.0" />
+    <link rel="stylesheet" href="game.css" />
+    <script src="phaser.js"></script>
+
+    <title>Editorial Zaratustra</title>
+  </head>
+
+
+  <body>
+    <div align="center">
+    <table>
+      <tr>
+        <td><p><div align = "center"><h1><img src="sprites/teamLogoSprite.png" width="458" height="271" /></h1></div></p></td>
+        <td><div align="center"><img src="sprites/title.png"/></div></td>
+        <td><div align="right"><a href="https://github.com/mihern07/EditorialZaratustra">
+          <img src="sprites/github.png" width="150" height="120" /></a>.<a href="https://www.pivotaltracker.com/projects/2470815">
+            <img src="sprites/pivotal-tracker.png" width="150" height="120" /></a>.</div></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <div align="center">
+            <p><h1><strong><span style="padding-top: 100px;">Cómo se juega</span></strong></h1></p>
+            <p><h3>¡Bienvenido a tu nuevo trabajo en la editorial Zaratustra!</h3></p>
+            <p><h3>Para conseguir el salario necesario para su supervivencia deberá de aceptar o denegar libros.</h3></p>
+            <p><h3>Preste especial atención a las indicaciones del jefe al inicio de su jornada laboral para conocer los libros que debe aceptar.</h3></p>
+            <p><h3>Los colores de los libros deben de representar su categoría, acepta solo libros cuyo color coincida con su categoría.</h3></p>
+            <p><h3>Todas los colores de categorías son mostrados en el tablón mediante post-its. Puedes ordenar estos post-its como quieras para ayudarte a organizarte.</h3></p>
+            
+  
+            <p><h1><strong>Controles</strong></h1></p>
+            
+          <table>
+            <tr>
+              <td><p></p></td>
+              <td><p><img src="sprites/left-click.png" width="150" height="120" /></p></td>
+              <td><p><h2>Arrastra los objetos e interactúa con algunos objetos</h2></p></td>
+
+            </tr>
+            <tr>
+              <td><p></p></td>
+              <td><p><img src="sprites/right-click.png" width="150" height="120" /></p></td>
+              <td><p><h2>Interactúa con libros y documentos</h2></p></td>
+
+            </tr>
+            <tr>
+              <td><p></p></td>
+              <td><p><img src="sprites/timbreSprite.png" width="125" height="105" /></p></td>
+              <td><p><h2>Pulsa el timbre para llamar al siguiente cliente</h2></p></td>
+
+            </tr>
+            <tr>
+              <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></td>
+              <td><p><img src="sprites/penSprite.png"  height="120" />
+                <img src="sprites/tintero.png" width="50" height="50" />
+                <img src="sprites/tinteroRojo.png" width="50" height="50" /></p></td>
+              <td><p><h2>Arrastra la pluma al tintero para teñirla</h2></p></td>
+
+            </tr>
+            <tr>
+              <td><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></td>
+              <td><p><img src="sprites/documentoSprite.png" width="150"  /></p></td>
+              <td><p><h2>Arrastra la pluma teñida al documento para aceptar o denegar</h2></p></td>
+
+            </tr>
+          </table>
+          </div>
+        </td>
+        <td valign="top"></td>
+      </tr>
+      
+      <tr>
+        <td></td>
+        <td><h1>Que disfrute de su jornada laboral</h1></td>
+        <td></td>
+      </tr>
+      
+    </table></div>
+    <script type="module">
+      import Boot from "./boot.js";
+      import titleScene from "./titleScene.js";
+      import victoryScene from "./victoryScene.js";
+      import gameOverScene from "./gameOverScene.js";
+      import storyIntro from "./storyIntro.js";
+      import endingScene from "./endScene.js";
+      import creditsScene from "./creditsScene.js";
+      var config = {
+        type: Phaser.AUTO,
+        width: 1100,
+        height: 800,
+        pixelArt: false,
+        input: {
+          gamepad: true,
+        },
+        scale: {
+          mode: Phaser.Scale.FIT,
+          autoCenter: Phaser.Scale.CENTER_BOTH,
+        }, 
+        scene: [Boot, titleScene, storyIntro, victoryScene, gameOverScene, endingScene, creditsScene],
+        physics: {
+          default: "arcade",
+          arcade: { gravity: { y: 400 }, debug: false },
+        },
+      };
+      new Phaser.Game(config);
+    </script>
+  </body>
+</html>
